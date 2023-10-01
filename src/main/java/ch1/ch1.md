@@ -1,4 +1,4 @@
-<img width="593" alt="arch_android" src="https://github.com/gudrmsglgl/android_next_step/assets/16537977/3b15b592-6963-4e9e-9d81-eb497db6b57e">
+
 
 
 ## System Apps
@@ -32,6 +32,28 @@
 - Telephone, Location Manager 등은 하드웨어를 제어하기 위해서, Resource Manager 등은 리소스 테이블을 유지하고 접근할 때 빠른속도를 위해서 사용
 
 ## 씬 클라이언트와 서버
+
+### MediaServer / SystemServer
+![service](https://github.com/gudrmsglgl/android_next_step/assets/16537977/4966f92a-76de-456e-95ba-4be5ea9a70d6)
+
+### MediaServer
+![4](https://github.com/gudrmsglgl/android_next_step/assets/16537977/0563dd6d-e8cd-402f-acac-18fa67169fdd)
+
+### SystemServer
+![system](https://github.com/gudrmsglgl/android_next_step/assets/16537977/5e6bb2ea-3a2f-4fc8-a125-84233fed6934)
+
+### Context Manager
+- 서비스 관련 요청을 수행하기 위해서는 IPC 데이터를 수신 대기하는 상태에 들어 있어야 함
+- 다른 서비스 서버 / 서비스 클라이언트 이전에 미리 실행되어야 함
+- init.rc 내용을 보면 서비스 서버(MediaServer, SystemServer) 실행되기 이전에 실행(serviceManager)됨
+  ```bash
+  service servicemanager /system/bin/servicemanager
+     user system
+     critical
+     onrestart restart zygote
+     onrestart restart media
+  ```
+
 - 서버 기능은 별도 프로세스 > system_server에서 실행
   > 여러 앱을 통햅해서 관리하는 '통합 문의 채널'
   > 
