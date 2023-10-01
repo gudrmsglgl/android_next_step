@@ -1,4 +1,4 @@
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/31843d34-e811-4c63-943c-f4ef1d063319/6a4d23d1-be74-4237-906a-8c2763838f9b/Untitled.png)
+<img width="593" alt="arch_android" src="https://github.com/gudrmsglgl/android_next_step/assets/16537977/3b15b592-6963-4e9e-9d81-eb497db6b57e">
 
 
 ## System Apps
